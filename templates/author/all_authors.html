@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Availbe authors</h1>
+
+{% if authors %}
+        {% for el in authors %}
+        	<div class ="alert alert-warning mt-2">
+                <p>{{el.id}}--"{{el.name}}" - {{el.surname}} - {{el.patronymic}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нажаль авторів немає в нашому списку</p>
+    {% endif %}
+
+{% endblock %}

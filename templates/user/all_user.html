@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Availbe users</h1>
+
+{% if users %}
+        {% for el in users %}
+            <div class ="alert alert-warning mt-2">
+                <p> {{el.id}} --"{{el.first_name}}" - {{el.last_name}} - {{el.email}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Sorry, all users are taken</p>
+    {% endif %}
+
+{% endblock %}

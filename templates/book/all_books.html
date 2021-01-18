@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Availbe books</h1>
+
+{% if books %}
+        {% for el in books %}
+            <div class ="alert alert-warning mt-2">
+                <p>{{el.id}}--"{{el.name}}"-"{{el.description}}" - {{el.count}}-{{el.authors}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Oups,books in empty</p>
+    {% endif %}
+
+{% endblock %}

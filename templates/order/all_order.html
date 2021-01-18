@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Availbe orders</h1>
+
+{% if orders %}
+        {% for el in orders %}
+            <div class ="alert alert-warning mt-2">
+                <p>{{el.id}}--"{{el.user.first_name}}"-"{{el.user.last_name}}" - {{el.book.name}}- Take={{el.created_at}} - Back={{el.end_at}}-</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Oups,orders in empty</p>
+    {% endif %}
+
+{% endblock %}
