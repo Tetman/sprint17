@@ -3,11 +3,15 @@
 {% block content %}
 
 <h1>Availbe users</h1>
+<a class="p-2 text-dark" href="{% url 'new_user' %}">New User</a>
 
 {% if users %}
         {% for el in users %}
             <div class ="alert alert-warning mt-2">
-                <p> {{el.id}} --"{{el.first_name}}" - {{el.last_name}} - {{el.email}}</p>
+                <p> {{el.id}} --{{el.first_name}} - {{el.last_name}} - {{el.middle_name}}</p>
+                <a href="{% url 'edit_user' el.id %}">Edit</a>
+                <a href="{% url 'get_by_id' el.id %}">Detail</a>
+                <a href="{% url 'user_delete' el.id %}">Delete</a>
             </div>
         {% endfor %}
     {% else %}

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="{% url 'edit_user' user.id %}" method="post">
+<form action="{% url 'edit_order' order.id %}" method="post">
 	{% csrf_token %}
 	{{form.as_p}}
 <button name="submit">Update</button>
