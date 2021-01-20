@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Availbe orders</h1>
+<h1>Available orders</h1>
 <a href="{% url 'new_order' %}">New order</a>
 
 {% if orders %}
@@ -15,7 +15,7 @@
             </div>
         {% endfor %}
     {% else %}
-        <p>Oups,orders in empty</p>
+        <p>Oops, no orders so far. Would uou like to <a href="{% url 'new_order' %}">place new order</a>?</p>
     {% endif %}
 
 {% endblock %}

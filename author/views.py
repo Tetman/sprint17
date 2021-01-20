@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Author
+from .forms import AuthorForm
 
 # Create your views here.
 def get_all_authors(request):
